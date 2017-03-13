@@ -1,0 +1,71 @@
+//1 Clonar el repositorio y establecer el usuario y el correo 
+git clone https://github.com/nombre_de_usuario/umafactorial.git 
+
+git config user.name nombre_de_usuario_solo_caracteres_alfanumericos_sin_espacios
+git config user.email dirección_de_email_aunque_sea_ficticia
+
+
+//3 Añadimos los cambios del nuevo fichero
+git add factorial.java
+git commit -m "implementacion inicial"
+
+//4 Modificación de factorial
+git add factorial.java
+git commit -m "factorizacion"
+
+//5 Subimos los cambios de nuestro local a la nube
+git push origin master
+git checkout -b recursivo // creamos la rama recursivo y nos movemos a ella
+
+
+//7 Modificación de factorial
+git add factorial.java
+git commit -m "implementacion recursiva"
+
+//8 volvemos a master
+git checkout master
+
+//10 Modificación de factorial urgente en master
+git add factorial.java
+git commit -m "correccion de numeros negativos"
+
+//11 volvemos a recursivos
+git checkout recursivo
+git add factorial.java // cambios en el codigo
+git commit -m "optimizacion"
+
+
+//12
+git checkout master// volvemos a master
+git merge recursivo
+
+//13
+git checkout refacIO
+
+//14 Modificación de factorial
+git add factorial.java
+git commit -m "refactorizacion del metodo de entrada"	
+
+//15
+git stash // guardamos los cambios temporales en la pila
+git checkout master // volvemos a master
+
+//16 Modificación de factorial
+git add factorial.java
+git commit -m "cambio de long a BigInteger"
+git push origin master
+
+git checkout refacIO //volvemos
+git stash pop //restauramos la pila
+git add factorial.java
+git commit -m "refactorizacion del metodo de salida"
+
+//17
+git checkout master
+git merge refacIO //mezclamos ramas hay un conflicto
+
+//18 Identificamos los conflictos y hacemos los cambios necesarios
+git add factorial.java
+git commit -m "mezcla de rama refacIO" //hacemos commit de los cambios
+git push origin master // ya podemos subir los cambios a master
+
